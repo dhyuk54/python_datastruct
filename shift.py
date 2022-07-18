@@ -11,4 +11,5 @@ df['LAST_3_DAYS_AVE_PRICE'] = (df['PRICE'].shift(1,fill_value=0) +
                                  df['PRICE'].shift(1,fill_value=0)) / 3
 # 向前移动数据也是很轻松的，使用-1即可
 df['TOMORROW_price'] = df['PRICE'].shift(-1,fill_value=0)
+#
 print(df)
