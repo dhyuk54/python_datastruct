@@ -3,7 +3,7 @@ import pandas as pd
 import re
 import numpy as np
 
-
+# https://note.nkmk.me/python-re-match-search-findall-etc/
 df = pd.DataFrame({'mileage': ['1無名1', '1無名', '無名1', '無名1', '無名1', '無名1'],
                    'engine': ['-1000-', '1000-', '1000+', 'aaaa', 'bbbb', 'ccccc'],
                    })
