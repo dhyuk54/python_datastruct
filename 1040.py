@@ -9,7 +9,7 @@ df = pd.DataFrame({
     'address': ['1Andy1', '1Becatou1', '1Ccoityu1', '1Delete1', '1Edny1', '1Family', 'Groupy'],
     'city': ['LonYdon', 'YLondon', 'London', 'Oxford', 'Oxford', 'Durham', 'Durham'],
     'reason_name': ['', '', '', '', '', '', ''],
-    '移動株数': ['Y+', 'Y', 'Y12+', 'Y1000-', '2000+', '2000-', 'Y-'],
+    '移動株数': ['新+', 'Y', 'Y12+', 'Y1000-', '2000+', '2000-', 'Y-'],
     '2新株': ['10', '500', '48', '12', '21', '22', '14'],
     '新株残高': ['0', '0', '0', '0', '0', '0', '0'],
     '旧残高': ['100', '1000', '1000', '0', '2000', '50', '20'],
@@ -19,10 +19,12 @@ df = pd.DataFrame({
 # print(df['移動株数'])
 # cond1 = df['address'].str.findall(r'[^0-9]+')
 # print(cond1)
+print(df)
 df['reason_name'] = df['restaurant_id'].apply(lambda x: np.nan if x.isdigit() else x)
 df['restaurant_id'] = df['restaurant_id'].apply(lambda x: x if x.isdigit() else np.nan)
 
 df['address'] = df['address'].apply(lambda x: re.search(r'[^0-9]+', x).group())
+print(df)
 cond = df['city'].str.contains('Y')
 df['city'] = df['city'].mask(cond, 'Y')
 
@@ -62,7 +64,7 @@ def sign_format(element):
             return i
 
 
-print(df)
+
 print("\n")
 df['移動株数'] = df['移動株数'].replace({np.nan: 'nan'})
 df['移動株数'] = df['移動株数'].str.findall(r'[-+0-9]+')
