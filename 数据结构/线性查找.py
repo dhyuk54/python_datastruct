@@ -7,6 +7,7 @@ def linear_search(li,val):
         return None
 
 
+
 def binary_search(li, val):
     left = 0
     right = len(li) - 1
