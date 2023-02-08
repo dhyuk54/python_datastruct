@@ -39,6 +39,7 @@ from typing import List
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         digits = [0] + digits
+        print(digits)
         print(len(digits)) # 2
         print(digits)  # [0, 9]
         digits[len(digits) - 1] += 1
@@ -61,7 +62,7 @@ class Solution:
 
 
 solution = Solution()
-result = solution.plusOne([-1])
+result = solution.plusOne([9])
 print(f"result: {result}")
 
 
